@@ -1,0 +1,41 @@
+.dropAnimation {
+  animation: drop 2s ease-in-out;
+}
+
+.upAnimation {
+  animation: up 1s ease-in-out;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes up {
+  10% {
+    top: 140px;
+  }
+  100% {
+    top: -1000px;
+  }
+}
+
+@keyframes drop {
+  0% {
+    top: -3000px;
+  }
+  50% {
+    top: 120px;
+  }
+  60% {
+    top: 40px;
+  }
+  70% {
+    top: 90px;
+  }
+  80% {
+    top: 60px;
+  }
+  100% {
+    top: 80px;
+  }
+}

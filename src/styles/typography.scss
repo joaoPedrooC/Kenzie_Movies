@@ -1,0 +1,32 @@
+.title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+
+  &.lg {
+    font-size: clamp(1.3125rem, 5vw, 2.75rem);
+  }
+
+  &.md-lg {
+    font-size: clamp(1.8rem, 5vw, 2rem);
+  }
+
+  &.md {
+    font-size: clamp(1.4rem, 5vw, 1.625rem);
+  }
+
+  &.sm {
+    font-size: clamp(1rem, 5vw, 1.3125rem);
+  }
+}
+
+.paragraphPoppins {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(0.9rem, 5vw, 1.0625rem);
+  font-weight: 700;
+}
+
+.paragraphInter {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(0.875rem, 5vw, 1.125rem);
+  font-weight: 400;
+}
