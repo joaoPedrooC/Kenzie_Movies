@@ -1,0 +1,21 @@
+.desktopNav {
+  display: none;
+
+  & > button:first-child {
+    background-color: transparent;
+
+    color: var(--color-white);
+  }
+
+  & > button:last-child:hover {
+    filter: brightness(1.1);
+    box-shadow: 0px 0px 16px var(--color-gray-1);
+  }
+
+  @media (min-width: 488px) {
+    display: flex;
+    align-items: center;
+
+    gap: clamp(1rem, 3vw, 2.5rem);
+  }
+}
