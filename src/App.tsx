@@ -1,8 +1,10 @@
-import { RegisterPage } from "./pages/RegisterPage/RegisterPage";
+import { RoutesMain } from "./routes/RoutesMain";
 import './styles/index.scss';
 
 export const App = () => {
   return (
-    <RegisterPage />
-  );
+    <div className="app">
+      <RoutesMain />
+    </div>
+    );
 }
