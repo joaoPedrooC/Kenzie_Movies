@@ -1,8 +1,8 @@
-import { LoginPage } from "./pages/LoginPage/LoginPage";
+import { RegisterPage } from "./pages/RegisterPage/RegisterPage";
 import './styles/index.scss';
 
 export const App = () => {
   return (
-    <LoginPage />
+    <RegisterPage />
   );
 }
