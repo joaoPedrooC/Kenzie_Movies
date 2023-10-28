@@ -3,6 +3,7 @@ import { Header } from "../../components/Header/Header";
 import { FaArrowLeftLong } from 'react-icons/fa6';
 import styles from './styles.module.scss';
 import { RegisterPageForm } from "../../components/Forms/RegisterPageForm/RegisterPageForm";
+import { Link } from 'react-router-dom';
 
 export const RegisterPage = () => {
   return (
@@ -12,9 +13,9 @@ export const RegisterPage = () => {
         <div className="container">
           <div>
             <h1 className="title lg">Cadastro</h1>
-            <button className="link paragraphPoppins">
+            <Link to={'/'} className="link paragraphPoppins">
               <FaArrowLeftLong /> Voltar
-            </button>
+            </Link>
           </div>
           <p className="paragraphInter">Preencha os campos para cadastrar-se</p>
           <RegisterPageForm />
