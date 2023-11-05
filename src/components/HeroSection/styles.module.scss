@@ -1,0 +1,50 @@
+.heroSection {
+  display: flex;
+  flex-direction: column;
+
+  gap: clamp(0.6rem, 5vw, 1.3rem);
+
+  & > img {
+    width: 100%;
+    border-radius: clamp(0px, 3vw, 40px);
+
+    cursor: pointer;
+  }
+  
+  & > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 0.3rem;
+
+    & > div {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: clamp(5px, 2vw, 1rem);
+
+      & > span {
+        border: 1px solid gray;
+        color: gray;
+
+        padding: 0.5rem 1rem;
+        border-radius: 32px;
+
+        transition: 1s ease;
+
+        &:hover {
+          color: var(--color-yellow);
+          border-color: var(--color-yellow);
+        }
+      }
+    }
+
+    @media (min-width: 500px) {
+      gap: 0;
+    }
+
+  }
+}
