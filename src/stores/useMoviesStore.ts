@@ -4,7 +4,7 @@ import { Movie } from "../interfaces/MoviesInterfaces";
 
 interface MovieStoreInterface {
   moviesList: Movie[];
-  readAllMovies: () => void;
+  readAllMovies: (setLoading: React.Dispatch<React.SetStateAction<boolean>>) => void;
   readMovieById: () => void;
   createReview: () => void;
   editReview: () => void;
@@ -13,13 +13,16 @@ interface MovieStoreInterface {
 
 export const useMovieStore = create<MovieStoreInterface>((set) => ({
   moviesList: [],
-  readAllMovies: async () => {
+  readAllMovies: async ( setLoading ) => {
     try {
+      setLoading(true);
       const movies = await api.get('/movies?_embed=reviews');
       
       set({ moviesList: movies.data });
     } catch (error) {
       console.log(error);
+    } finally {
+      setLoading(false);
     }
   },
   readMovieById: () => {

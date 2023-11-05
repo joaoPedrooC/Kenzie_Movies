@@ -10,6 +10,10 @@
   display: none;
 }
 
+.spin {
+  animation: spin 2s linear infinite;
+}
+
 @keyframes up {
   10% {
     top: 140px;
@@ -37,5 +41,14 @@
   }
   100% {
     top: 80px;
+  }
+}
+
+@keyframes spin {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 720deg;
   }
 }

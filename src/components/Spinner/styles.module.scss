@@ -1,0 +1,17 @@
+.spinnerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100vh;
+
+  & > div {
+    width: clamp(20px, 5vw, 400px);
+    height: clamp(20px, 5vw, 400px);
+
+    border-top: 3px double var(--color-yellow);
+
+    border-radius: 50%;
+  }
+}
