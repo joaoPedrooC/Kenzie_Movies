@@ -1,0 +1,44 @@
+.movieCard {
+  display: flex;
+  flex-direction: column;
+
+  gap: 1rem;
+  
+  margin-bottom: 20px;
+
+  & > img {
+    max-width: 100%;
+    border-radius: clamp(10px, 7vw, 50px);
+
+    cursor: pointer;
+
+    @media (min-width: 740px) {
+      border-radius: clamp(0px, 10vw, 30px);
+    }
+  }
+  
+  & > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    flex-wrap: wrap;
+    
+    gap: 1rem;
+
+    & > span {
+      border: 1px solid gray;
+      color: gray;
+
+      padding: 0.5rem 1rem;
+      border-radius: 32px;
+
+      transition: 1s ease;
+
+      &:hover {
+        color: var(--color-yellow);
+        border-color: var(--color-yellow);
+      }
+    }
+  }
+}

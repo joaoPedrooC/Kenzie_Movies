@@ -1,0 +1,19 @@
+.moviesList {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2.25rem;
+
+  margin-top: clamp(1rem, 10vw, 4rem);
+
+  @media (min-width: 740px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 2.69rem;
+  }
+
+  @media (min-width: 1012px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
