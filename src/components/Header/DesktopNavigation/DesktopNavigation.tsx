@@ -1,12 +1,8 @@
+import { User } from '../../../interfaces/UserInterfaces';
 import styles from './styles.module.scss';
 
 interface IDesktopNavigationProps {
-  user: {
-    name: string;
-    email: string;
-    id: number;
-    age: number
-  } | null
+  user: User | null;
 }
 
 export const DesktopNavigation = ({ user }: IDesktopNavigationProps) => {

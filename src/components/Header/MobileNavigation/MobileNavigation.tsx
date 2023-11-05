@@ -1,13 +1,9 @@
 import { useState } from 'react';
 import styles from './styles.module.scss';
+import { User } from '../../../interfaces/UserInterfaces';
 
 interface IMobileNavigationProps {
-  user: {
-    name: string;
-    email: string;
-    id: number;
-    age: number
-  } | null
+  user: User | null;
 }
 
 export const MobileNavigation = ({ user }: IMobileNavigationProps) => {
@@ -38,7 +34,7 @@ export const MobileNavigation = ({ user }: IMobileNavigationProps) => {
             <div className={styles.userMenuContainer}>
               <div>
                 <div><span className='title sm'>{user.name[0].toUpperCase()}</span></div>
-                <p className='title sm'>{user.name.split(' ')[0]}</p>
+                <p className='title sm'>{user.name.split(' ')[0].length > 20 ? user.name.split(' ')[0].slice(0, 10) + '...' : user.name.split(' ')[0]}</p>
               </div>
               <span className='paragraphPoppins'>{user.email}</span>
               <button type="button" className='btn md paragraphPoppins'>Sair</button>

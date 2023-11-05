@@ -3,11 +3,19 @@ import styles from './styles.module.scss';
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { RegisterPageSchema } from "../../../schemas/RegisterPageSchema";
+import { useUserStore } from "../../../stores/useUserStore";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const RegisterPageForm = () => {
   const { register, formState: { errors }, handleSubmit } = useForm({
     resolver: zodResolver(RegisterPageSchema)
   });
+  
+  const [loading, setLoading] = useState<boolean>(false)
+  const createUser = useUserStore((store) => store.createUser);
+
+  const navigate = useNavigate();
 
   const submit = (formData: any) => {
     const sendFormData = {
@@ -15,6 +23,8 @@ export const RegisterPageForm = () => {
       email: formData.email,
       password: formData.password
     };
+
+    createUser(sendFormData, setLoading, navigate);
   }
 
   return (
@@ -25,7 +35,7 @@ export const RegisterPageForm = () => {
         <Input placeholder="Senha" register={register} errors={errors} id="password" type="password"/>
         <Input placeholder="Confirmar senha" register={register} errors={errors} id="confirmPassword" type="password"/>
       </div>
-      <button type="submit" className="paragraphPoppins btn lg">Cadastrar-se</button>
+      <button type="submit" className="paragraphPoppins btn lg" disabled={loading} >Cadastrar-se</button>
     </form>
   );
 }

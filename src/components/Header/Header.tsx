@@ -1,15 +1,11 @@
 import logo from '../../assets/logo.svg';
+import { useUserStore } from '../../stores/useUserStore';
 import { DesktopNavigation } from './DesktopNavigation/DesktopNavigation';
 import { MobileNavigation } from './MobileNavigation/MobileNavigation';
 import styles from './styles.module.scss';
 
 export const Header = () => {
-  const user = {
-    name: 'User',
-    email: 'mail@mail.com',
-    age: 100,
-    id: 1
-  }
+  const user = useUserStore((store) => store.user);
 
   return (
     <header className={styles.header}>
