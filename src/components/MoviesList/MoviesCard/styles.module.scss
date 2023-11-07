@@ -11,6 +11,12 @@
     border-radius: clamp(10px, 7vw, 50px);
 
     cursor: pointer;
+    transition: 0.6s;
+
+    &:hover {
+      transform: scale(1.02);
+      box-shadow: 2px 2px 8px var(--color-gray-1);
+    }
 
     @media (min-width: 740px) {
       border-radius: clamp(0px, 10vw, 30px);

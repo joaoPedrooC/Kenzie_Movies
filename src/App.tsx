@@ -7,7 +7,7 @@ export const App = () => {
   return (
     <div className="app">
       <RoutesMain />
-      <ToastContainer theme="dark" />
+      <ToastContainer theme="dark" autoClose={2000} />
     </div>
     );
 }

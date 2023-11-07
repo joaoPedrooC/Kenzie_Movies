@@ -8,6 +8,7 @@ interface UserStoreInterface {
   user: User | null;
   login: (userInfo: UserLogin, setLoading: React.Dispatch<React.SetStateAction<boolean>>, navigate: NavigateFunction) => void;
   createUser: (userInfo: UserCreate, setLoading: React.Dispatch<React.SetStateAction<boolean>>, navigate: NavigateFunction) => void;
+  logout: (navigate: NavigateFunction) => void;
 }
 
 export const useUserStore = create<UserStoreInterface>((set) => ({
@@ -44,5 +45,14 @@ export const useUserStore = create<UserStoreInterface>((set) => ({
     } finally {
       setLoading(false);
     }
+  },
+  logout: async (navigate) => {
+    localStorage.removeItem('@KenzieMovieToken');
+    localStorage.removeItem('@KenzieMovieUserId');
+
+    toast.info('Deslogando...');
+
+    set({ user: null });
+    navigate('/');
   }
 }));

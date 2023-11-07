@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { User } from '../../../interfaces/UserInterfaces';
 import styles from './styles.module.scss';
 
@@ -8,8 +9,8 @@ interface IDesktopNavigationProps {
 export const DesktopNavigation = ({ user }: IDesktopNavigationProps) => {
   return (
     <nav className={user ? 'hidden' : styles.desktopNav}>
-      <button className='paragraphPoppins' >Cadastrar-se</button>
-      <button className='btn sm paragraphPoppins'>Entrar</button>
+      <Link to={'/register'} className='paragraphPoppins'>Cadastrar-se</Link>
+      <Link to={'/login'} className='btn sm paragraphPoppins'>Entrar</Link>
     </nav>
   );
 }

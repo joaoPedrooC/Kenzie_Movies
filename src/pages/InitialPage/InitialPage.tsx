@@ -8,10 +8,12 @@ import { Spinner } from "../../components/Spinner/Spiner";
 
 export const InitialPage = () => {
   const { moviesList, readAllMovies } = useMovieStore((store) => store);
-  const [loading, setLoading] = useState<boolean>(true);
+  const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
-    readAllMovies(setLoading);
+    if(moviesList.length === 0) {
+      readAllMovies(setLoading);
+    }
   }, []);
 
   return (

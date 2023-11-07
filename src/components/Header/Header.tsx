@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.svg';
 import { useUserStore } from '../../stores/useUserStore';
 import { DesktopNavigation } from './DesktopNavigation/DesktopNavigation';
@@ -10,7 +11,9 @@ export const Header = () => {
   return (
     <header className={styles.header}>
       <div className="container">
-        <img src={logo} alt="Logo KenzieMovies" />
+        <Link to={'/'}>
+          <img src={logo} alt="Logo KenzieMovies" />
+        </Link>
         <MobileNavigation user={user} />
         <DesktopNavigation user={user} />
       </div>

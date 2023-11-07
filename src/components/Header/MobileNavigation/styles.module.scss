@@ -169,11 +169,11 @@
     padding: 1rem;
     gap: 1.5rem;
 
-    & > button:first-child {
+    & > a:first-child {
       margin-top: 20px;
     }
 
-    & > button:last-child {
+    & > a:last-child {
       margin-bottom: 20px;
     }
   }
