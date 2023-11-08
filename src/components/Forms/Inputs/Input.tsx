@@ -14,7 +14,7 @@ export const Input = ({ placeholder, register, errors, id, ...rest }: IInputProp
 
   return (
     <div className={styles.inputBox}>
-      <label htmlFor="input" className={`${styles.label} ${isNull ? styles.active : ''} paragraphPoppins`}>{placeholder}</label>
+      <label htmlFor="input" className={`${styles.label} ${isNull ? styles.active : ''} label`}>{placeholder}</label>
       <input type="text" className='paragraphInter' {...rest} {...register(id, 
         { onChange: (e) => setIsNull(e.target.value.length > 0 ? true : false) }
         )}

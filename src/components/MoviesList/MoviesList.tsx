@@ -9,7 +9,7 @@ interface MoviesListProps {
 export const MoviesList = ({ moviesList }: MoviesListProps) => {
   return (
     <ul className={styles.moviesList}>
-      { moviesList.map(movie => <MoviesCard movie={movie} /> ) }
+      { moviesList.map(movie => <MoviesCard movie={movie} key={movie.id} /> ) }
     </ul>
   );
 }

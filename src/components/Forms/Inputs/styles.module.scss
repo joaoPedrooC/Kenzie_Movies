@@ -1,7 +1,7 @@
 .inputBox {
   position: relative;
 
-  height: 4.375rem;
+  height: clamp(4rem, 10vw, 4.375rem);
   width: 100%;
 
   &:has(input:focus) > .label {
@@ -24,8 +24,12 @@
     }
 
     &:not(.active) {
-      top: 26px;
+      top: 22px;
       left: 20px;
+
+      @media (min-width: 700px) {
+        top: 25px;
+      }
     }
   }
 
@@ -51,5 +55,7 @@
     font-weight: 400;
     
     font-size: clamp(0.875rem, 5vw, 1rem);
+
+    margin-top: 3px;
   }
 }
