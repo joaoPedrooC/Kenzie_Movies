@@ -1,0 +1,5 @@
+.paragraph {
+  margin-top: clamp(1rem, 3vw, 2rem);
+
+  line-height: clamp(1.6rem, 5vw, 2.25rem);
+}

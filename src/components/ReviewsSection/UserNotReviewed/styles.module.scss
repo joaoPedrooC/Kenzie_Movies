@@ -1,0 +1,12 @@
+.titleContainer {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 1rem;
+
+  @media (min-width: 400px) {
+    flex-flow: row wrap;
+  }
+}

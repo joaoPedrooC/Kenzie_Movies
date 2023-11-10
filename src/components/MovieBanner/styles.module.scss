@@ -1,0 +1,81 @@
+.movieBannerContainer {
+  display: flex;
+  flex-direction: column;
+
+  gap: 1rem;
+
+  & > img {
+    border-radius: clamp(24px, 6vw, 80px);
+  }
+
+  & > .movieInfoContainer {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1rem;
+
+    & > .movieRateContainer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      flex-wrap: wrap;
+      
+      gap: 0.3rem;
+
+      & > div {
+        display: flex;
+        align-items: center;
+
+        gap: 0.3rem;
+
+        & > svg { color: var(--color-yellow) }
+      }
+    }
+
+    & > .movieDescription {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      flex-wrap: wrap;
+      gap: 0.5rem;
+
+      & > .movieType {
+        border: 1px solid gray;
+        color: gray;
+
+        padding: 0.5rem 1rem;
+        border-radius: 32px;
+
+        transition: 1s ease;
+
+        &:hover {
+          color: var(--color-yellow);
+          border-color: var(--color-yellow);
+        }
+      }
+    }
+  }
+
+
+  @media (min-width: 815px) {
+    flex-direction: row;
+
+    & > img {
+      max-width: 500px;
+      height: 270px;
+
+      border-radius: 38px;
+    }
+
+    & > .movieInfoContainer > .movieRateContainer {
+      gap: 1rem;
+
+      & > div > svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}

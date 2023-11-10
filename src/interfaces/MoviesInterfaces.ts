@@ -15,3 +15,8 @@ export type Reviews = {
   score: number;
   description: string;
 }
+
+export type ReadMovieReturn = {
+  movie: Movie;
+  userReview: Reviews | undefined;
+}

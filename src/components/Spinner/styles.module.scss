@@ -7,8 +7,8 @@
   height: 100vh;
 
   & > div {
-    width: clamp(20px, 5vw, 400px);
-    height: clamp(20px, 5vw, 400px);
+    width: clamp(50px, 5vw, 400px);
+    height: clamp(50px, 5vw, 400px);
 
     border-top: 3px double var(--color-yellow);
 

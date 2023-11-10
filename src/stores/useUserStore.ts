@@ -9,6 +9,7 @@ interface UserStoreInterface {
   login: (userInfo: UserLogin, setLoading: React.Dispatch<React.SetStateAction<boolean>>, navigate: NavigateFunction) => void;
   createUser: (userInfo: UserCreate, setLoading: React.Dispatch<React.SetStateAction<boolean>>, navigate: NavigateFunction) => void;
   logout: (navigate: NavigateFunction) => void;
+  readUserById: (userId: number) => Promise<User>;
 }
 
 export const useUserStore = create<UserStoreInterface>((set) => ({
@@ -54,5 +55,9 @@ export const useUserStore = create<UserStoreInterface>((set) => ({
 
     set({ user: null });
     navigate('/');
+  },
+  readUserById: async (userId) => {
+    const { data } = await api.get(`/users/${userId}`);
+    return data;
   }
 }));

@@ -1,0 +1,61 @@
+.reviewsCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  max-width: 17rem;
+
+  height: fit-content;
+  
+  padding: 1.7rem 1rem;
+  gap: 1.4rem;
+
+  border: 1px solid var(--color-gray-1);
+  border-radius: 26px;
+
+  transition: 1s;
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 5px;
+
+    & > div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      width: 60px;
+      height: 60px;
+
+      border-radius: 100%;
+
+      background-color: var(--color-yellow);
+    }
+
+    & > span {
+      display: flex;
+      align-items: center;
+
+      gap: 0.3rem;
+
+      & > svg {
+        width: 20px;
+        height: 20px;
+
+        color: var(--color-yellow);
+      }
+    }
+  }
+
+  & > p:last-child {
+    align-self: flex-start;
+  }
+
+  &:hover {
+    box-shadow: 0px 0px 16px var(--color-gray-1);
+  }
+}
