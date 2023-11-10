@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { Movie } from "../../interfaces/MoviesInterfaces";
 import styles from './styles.module.scss';
 
@@ -6,9 +7,11 @@ interface HeroSectionProps {
 }
 
 export const HeroSection = ({ movie }: HeroSectionProps) => {
+  const navigate = useNavigate();
+
   return (
     <section className={styles.heroSection}>
-      <img src={movie?.image} alt={`Imagem do filme "${movie?.name}"`} />
+      <img src={movie?.image} alt={`Imagem do filme "${movie?.name}"`} onClick={() => navigate(`/movie/${movie?.id}`)}/>
       <div>
         <h1 className="title lg">{movie?.name}</h1>
         <div>
