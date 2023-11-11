@@ -10,6 +10,7 @@ interface UserStoreInterface {
   createUser: (userInfo: UserCreate, setLoading: React.Dispatch<React.SetStateAction<boolean>>, navigate: NavigateFunction) => void;
   logout: (navigate: NavigateFunction) => void;
   readUserById: (userId: number) => Promise<User>;
+  verifyUserLogged: () => Promise<void>
 }
 
 export const useUserStore = create<UserStoreInterface>((set) => ({
@@ -59,5 +60,19 @@ export const useUserStore = create<UserStoreInterface>((set) => ({
   readUserById: async (userId) => {
     const { data } = await api.get(`/users/${userId}`);
     return data;
+  },
+  verifyUserLogged: async () => {
+    const token = localStorage.getItem('@KenzieMovieToken');
+    const userId = localStorage.getItem('@KenzieMovieUserId');
+
+    if(token || userId) {
+      const { data } = await api.get(`/users/${userId}`);
+      console.log(data);
+      
+      set({ user: data });
+    } else {
+      localStorage.removeItem('@KenzieMovieToken');
+      localStorage.removeItem('@KenzieMovieUserId');
+    }
   }
 }));

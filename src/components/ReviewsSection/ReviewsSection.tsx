@@ -14,12 +14,10 @@ export const ReviewSection = ({ movie }: ReviewSectionProps) => {
 
   return (
     <section>
-      <div className="container">
-          { !userReview ? <UserNotReviewed /> : <UserReviewed /> }
-        <ul className={styles.reviewsList}>
-          { movie.reviews.map(movieReview => <ReviewsCards key={movieReview.id} movieReview={movieReview} />) }
-        </ul>
-      </div>
+      { !userReview ? <UserNotReviewed /> : <UserReviewed /> }
+      <ul className={styles.reviewsList}>
+        { movie.reviews.map(movieReview => <ReviewsCards key={movieReview.id} movieReview={movieReview} />) }
+      </ul>
     </section>
   );
 }

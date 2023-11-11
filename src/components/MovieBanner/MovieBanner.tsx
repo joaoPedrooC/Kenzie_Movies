@@ -9,7 +9,7 @@ interface MovieBannerInterface {
 export const MovieBanner = ({ movie }: MovieBannerInterface) => {
   return (
     <section>
-      <div className={`container ${styles.movieBannerContainer}`}>
+      <div className={`${styles.movieBannerContainer}`}>
         <img src={movie.image} alt={`Capa do filme ${movie.name}`} />
         <div className={styles.movieInfoContainer}>
           <div className={styles.movieRateContainer}>

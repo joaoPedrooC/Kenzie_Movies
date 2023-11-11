@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 import { Spinner } from "../../components/Spinner/Spiner";
 import { MovieDescription } from "../../components/MovieDescription/MovieDescription";
 import { ReviewSection } from "../../components/ReviewsSection/ReviewsSection";
+import { MovieControl } from "../../components/MovieControl/MovieControl";
 
 export const SingleMoviePage = () => {
   const { readMovieById, singleMovie } = useMovieStore(store => store);
@@ -25,9 +26,12 @@ export const SingleMoviePage = () => {
       <>
         <Header />
         <main>
-          <MovieBanner movie={singleMovie!}/>
-          <MovieDescription movie={singleMovie!} />
-          <ReviewSection movie={singleMovie!} />
+          <div className="container">
+            <MovieBanner movie={singleMovie!}/>
+            <MovieDescription movie={singleMovie!} />
+            <ReviewSection movie={singleMovie!} />
+            <MovieControl />
+          </div>
         </main>
         <Footer />
       </>

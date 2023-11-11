@@ -1,0 +1,15 @@
+.moviesControllerContainer {
+  display: flex;
+  justify-content: space-between;
+  
+  gap: 1rem;
+
+  flex-wrap: wrap;
+
+  margin: 80px 0 1rem;
+
+  & > button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+}

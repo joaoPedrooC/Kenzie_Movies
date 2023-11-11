@@ -7,8 +7,6 @@ interface MovieDescriptionInterface {
 
 export const MovieDescription = ({ movie }: MovieDescriptionInterface) => {
   return (
-    <div className="container">
-      <p className={`paragraphInter ${styles.paragraph}`}>"{movie.synopsis}"</p>
-    </div>
+    <p className={`paragraphInter ${styles.paragraph}`}>"{movie.synopsis}"</p>
   );
 }
